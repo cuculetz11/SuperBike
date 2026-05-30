@@ -31,7 +31,7 @@ const BIKES: Bike[] = [
       'Roți: 29"  •  Schwalbe Nobby Nic',
     ],
     image_url:
-      '/images/corss_rtx_khaki/BICICLETA-FULL-SUSPENSION-CROSS-RTX-FS-29-KHAKI-removebg-preview.png',
+      '/images/corss_rtx_khaki/BICICLETA-FULL-SUSPENSION-CROSS-RTX-FS-29-KHAKI.jpg',
     bgAccent: 'from-[#1a2030] via-[#111418] to-[#080808]',
   },
   {
@@ -48,7 +48,7 @@ const BIKES: Bike[] = [
       'Roți: 29"  •  Schwalbe Rapid Rob',
     ],
     image_url:
-      '/images/cross_fusion_pro/232367_138351_Bicicleta_Mtb_Cross_Grx_1x9_Cues_Dark_Green_1-removebg-preview.png',
+      '/images/cross_fusion_pro/232367_138351_Bicicleta_Mtb_Cross_Grx_1x9_Cues_Dark_Green_1.png',
     bgAccent: 'from-[#0f1a14] via-[#0d1210] to-[#080808]',
   },
   {
@@ -65,7 +65,7 @@ const BIKES: Bike[] = [
       'Roți: 27.5"  •  Kenda',
     ],
     image_url:
-      '/images/cross_causa_sl1_albastru_dama/229590_137563_Bicicleta_Mtb_Dama_Cross_Causa_SL_1_27.5_Blue_1-removebg-preview.png',
+      '/images/cross_causa_sl1_albastru_dama/229590_137563_Bicicleta_Mtb_Dama_Cross_Causa_SL_1_27.5_Blue_1.png',
     bgAccent: 'from-[#0d1520] via-[#0e1018] to-[#080808]',
   },
   {
@@ -82,7 +82,7 @@ const BIKES: Bike[] = [
       'Roți: 26"  •  Kenda 2.30"',
     ],
     image_url:
-      '/images/cross_dexter/241036_139685_Bicicleta_Mtb_Dirt_Cross_Dexter_Army_Green_1-removebg-preview.png',
+      '/images/cross_dexter/241036_139685_Bicicleta_Mtb_Dirt_Cross_Dexter_Army_Green_1.png',
     bgAccent: 'from-[#161208] via-[#111008] to-[#080808]',
   },
 ];
