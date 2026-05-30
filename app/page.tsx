@@ -7,7 +7,7 @@ import ContactFooter from '@/components/ContactFooter';
 
 export default function Home() {
   return (
-    <main className="bg-[#0A0A0A] min-h-screen">
+    <main className="bg-[#0A0A0A] min-h-screen overflow-x-hidden">
       <Hero />
       <BrandStory />
       <BikeGallery />
