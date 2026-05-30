@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const HERO_VIDEOS = [
   '/videos/hero1.mp4',
@@ -11,85 +12,73 @@ const HERO_VIDEOS = [
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [videoIndex, setVideoIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '40%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const blur = useTransform(scrollYProgress, [0, 0.5], [0, 8]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 300);
+    const timer = setTimeout(() => setIsLoaded(true), 200);
     return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleVideoEnd = () => {
     setVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
   };
 
-  // Letter stagger animation
+  // ─── Stagger reveal animations ────────────────────────────────────────────
   const title = 'SUPERBIKE';
+
   const containerVariants = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.07, delayChildren: 0.6 },
+      transition: { staggerChildren: 0.06, delayChildren: 0.8 },
     },
   };
+
   const letterVariants = {
-    hidden: { y: 120, opacity: 0, rotateX: -40 },
+    hidden: { y: 140, opacity: 0, rotateX: -60, scale: 0.7 },
     visible: {
       y: 0,
       opacity: 1,
       rotateX: 0,
-      transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
+      scale: 1,
+      transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
-  const subtitleVariants = {
-    hidden: { opacity: 0, y: 30 },
+  const fadeUp = (delay: number) => ({
+    hidden: { opacity: 0, y: 35 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 1.2, ease: 'easeOut', delay: 1.4 },
+      transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1], delay },
     },
-  };
+  });
 
-  const lineVariants = {
+  const lineGrow = (delay: number) => ({
     hidden: { scaleX: 0 },
     visible: {
       scaleX: 1,
-      transition: { duration: 1, ease: [0.16, 1, 0.3, 1], delay: 1.2 },
+      transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1], delay },
     },
-  };
-
-  const scrollIndicatorVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { delay: 2.5, duration: 1 },
-    },
-  };
+  });
 
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-screen overflow-hidden"
-      style={{ perspective: '1000px' }}
+      className="relative w-full h-[100dvh] overflow-hidden"
+      style={{ perspective: '1200px' }}
     >
-      {/* Video background with parallax */}
+      {/* ═══ VIDEO BACKGROUND ═══ */}
       <motion.div
         className="absolute inset-0 w-full h-full"
         style={{ y, scale }}
@@ -97,124 +86,185 @@ export default function Hero() {
         <AnimatePresence mode="wait">
           <motion.video
             key={videoIndex}
-            ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             muted
             playsInline
             onEnded={handleVideoEnd}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 2, ease: 'easeInOut' }}
           >
             <source src={HERO_VIDEOS[videoIndex]} type="video/mp4" />
           </motion.video>
         </AnimatePresence>
 
         {/* Multi-layer cinematic overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/40 via-transparent to-[#0A0A0A]/20" />
-        <div className="video-grain" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/70 via-[#080808]/20 to-[#080808]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/50 via-transparent to-[#080808]/30" />
+        <div className="vignette" />
+
+        {/* Warm orange haze at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#F5A623]/[0.04] to-transparent pointer-events-none" />
       </motion.div>
 
-      {/* Content */}
+      {/* ═══ FLOATING PARTICLES / GLOW ═══ */}
+      <div className="absolute inset-0 pointer-events-none z-[5]">
+        {/* Ambient orange orb — top right */}
+        <motion.div
+          className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(245,166,35,0.06) 0%, transparent 70%)',
+          }}
+          animate={{ y: [0, 30, 0], x: [0, -15, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        {/* Ambient red orb — bottom left */}
+        <motion.div
+          className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(224,60,49,0.04) 0%, transparent 70%)',
+          }}
+          animate={{ y: [0, -20, 0], x: [0, 20, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+        />
+      </div>
+
+      {/* ═══ CONTENT ═══ */}
       <motion.div
         className="relative z-10 h-full flex flex-col items-center justify-center px-6"
         style={{ opacity }}
       >
-        {/* Top line decoration */}
+        {/* Logo above title */}
         <motion.div
-          className="w-px h-16 bg-gradient-to-b from-transparent to-[#C9A84C] mb-10 origin-top"
-          variants={lineVariants}
-          initial="hidden"
-          animate="visible"
-        />
-
-        {/* Label */}
-        <motion.p
-          className="text-[#C9A84C] font-body text-xs tracking-[0.5em] uppercase mb-6 font-light"
-          variants={subtitleVariants}
-          initial="hidden"
-          animate="visible"
-          style={{ transitionDelay: '0.4s' }}
+          initial={{ opacity: 0, scale: 0.8, y: -20 }}
+          animate={isLoaded ? { opacity: 1, scale: 1, y: 0 } : {}}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          className="mb-6"
         >
-          Focșani · Vrancea · Est. 1995
+          <Image
+            src="/logos/superbike-logo.png"
+            alt="Superbike Logo"
+            width={100}
+            height={100}
+            className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-[0_0_30px_rgba(245,166,35,0.3)]"
+            priority
+          />
+        </motion.div>
+
+        {/* Micro-label above title */}
+        <motion.p
+          variants={fadeUp(0.5)}
+          initial="hidden"
+          animate="visible"
+          className="text-[#F5A623] text-[10px] md:text-xs tracking-[0.6em] uppercase font-light mb-5"
+        >
+          Focșani · Vrancea · Din 1995
         </motion.p>
 
-        {/* Giant title with letter-by-letter animation */}
+        {/* ─── GIANT TITLE ─── */}
         <motion.div
-          className="flex overflow-hidden"
+          className="flex flex-nowrap justify-center overflow-hidden w-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          style={{ perspective: '800px' }}
+          style={{ perspective: '1000px' }}
         >
           {title.split('').map((letter, i) => (
             <motion.span
               key={i}
               variants={letterVariants}
-              className="font-display text-[clamp(5rem,15vw,14rem)] leading-none tracking-[0.05em] text-[#F5F0E8] inline-block"
-              style={{ transformOrigin: 'top center' }}
+              className="font-display text-[clamp(2.8rem,10.5vw,13rem)] leading-[0.85] tracking-[0.01em] inline-block text-glow flex-shrink-0"
+              style={{
+                transformOrigin: 'bottom center',
+                color: i < 5 ? '#FFF8F0' : undefined, // SUPER = white
+                WebkitTextFillColor: i >= 5 ? 'transparent' : undefined, // BIKE = gradient
+                background: i >= 5
+                  ? 'linear-gradient(135deg, #FFD080 0%, #F5A623 50%, #E03C31 100%)'
+                  : undefined,
+                WebkitBackgroundClip: i >= 5 ? 'text' : undefined,
+                backgroundClip: i >= 5 ? 'text' : undefined,
+              }}
             >
               {letter}
             </motion.span>
           ))}
         </motion.div>
 
-        {/* Gold line below title */}
+        {/* Animated orange gradient line */}
         <motion.div
-          className="h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent origin-center mt-4 mb-8"
-          style={{ width: 'clamp(200px, 40vw, 600px)' }}
-          variants={lineVariants}
+          className="h-[2px] mt-4 mb-6 origin-center"
+          style={{ width: 'clamp(180px, 35vw, 500px)' }}
+          variants={lineGrow(1.3)}
           initial="hidden"
           animate="visible"
-        />
+        >
+          <div className="h-full w-full bg-gradient-to-r from-transparent via-[#F5A623] to-transparent" />
+        </motion.div>
 
-        {/* Subtitle */}
+        {/* Tagline */}
         <motion.p
-          className="font-body text-[#F5F0E8]/60 text-sm md:text-base tracking-[0.25em] uppercase font-light text-center max-w-md"
-          variants={subtitleVariants}
+          variants={fadeUp(1.5)}
           initial="hidden"
           animate="visible"
+          className="text-[#FFF8F0]/50 text-xs md:text-sm tracking-[0.3em] uppercase font-light text-center max-w-lg"
         >
           30 de ani de pasiune · Calitate fără compromis
         </motion.p>
 
-        {/* CTA scroll button */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer"
-          variants={scrollIndicatorVariants}
+        {/* Subtitle — italic poetic line */}
+        <motion.p
+          variants={fadeUp(1.8)}
           initial="hidden"
-          animate={isLoaded ? 'visible' : 'hidden'}
-          onClick={() => {
-            document.getElementById('brand-story')?.scrollIntoView({ behavior: 'smooth' });
-          }}
+          animate="visible"
+          className="mt-4 text-[#FFF8F0]/30 text-sm md:text-base font-light italic text-center max-w-md"
+          style={{ fontFamily: 'var(--font-playfair)' }}
         >
-          <span className="text-[#C9A84C]/60 text-[10px] tracking-[0.4em] uppercase font-light">
-            Descoperă
-          </span>
-          <motion.div
-            className="w-[1px] h-10 bg-gradient-to-b from-[#C9A84C] to-transparent"
-            animate={{ scaleY: [0, 1, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          />
-        </motion.div>
+          Magazin de biciclete premium
+        </motion.p>
       </motion.div>
 
-      {/* Video dots indicator */}
-      <div className="absolute bottom-10 right-8 flex gap-2 z-10">
+      {/* ═══ SCROLL INDICATOR ═══ */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isLoaded ? { opacity: 1 } : {}}
+        transition={{ delay: 3, duration: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer z-20"
+        onClick={() =>
+          document.getElementById('brand-story')?.scrollIntoView({ behavior: 'smooth' })
+        }
+      >
+        <span className="text-[#F5A623]/50 text-[9px] tracking-[0.5em] uppercase font-light">
+          Descoperă
+        </span>
+        <motion.div
+          className="w-px h-12 bg-gradient-to-b from-[#F5A623] to-transparent"
+          animate={{ scaleY: [0, 1, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+        />
+      </motion.div>
+
+      {/* ═══ VIDEO DOTS ═══ */}
+      <div className="absolute bottom-8 right-6 flex gap-2 z-20">
         {HERO_VIDEOS.map((_, i) => (
           <button
             key={i}
             onClick={() => setVideoIndex(i)}
-            className={`w-1 h-1 rounded-full transition-all duration-500 ${
-              i === videoIndex ? 'bg-[#C9A84C] w-6' : 'bg-white/30'
+            className={`h-[3px] rounded-full transition-all duration-700 ${
+              i === videoIndex
+                ? 'bg-[#F5A623] w-8'
+                : 'bg-white/20 w-2 hover:bg-white/40'
             }`}
             aria-label={`Video ${i + 1}`}
           />
         ))}
       </div>
+
+      {/* ═══ CORNER FRAMES (decorative) ═══ */}
+      <div className="absolute top-6 left-6 w-12 h-12 border-l border-t border-[#F5A623]/15 z-20" />
+      <div className="absolute top-6 right-6 w-12 h-12 border-r border-t border-[#F5A623]/15 z-20" />
+      <div className="absolute bottom-6 left-6 w-12 h-12 border-l border-b border-[#F5A623]/15 z-20" />
     </section>
   );
 }

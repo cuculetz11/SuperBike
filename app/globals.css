@@ -2,16 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
   --font-bebas: 'Bebas Neue', Impact, sans-serif;
   --font-inter: 'Inter', system-ui, sans-serif;
   --font-playfair: 'Playfair Display', Georgia, serif;
-  --gold: #C9A84C;
-  --gold-light: #E8C97A;
-  --cream: #F5F0E8;
-  --black: #0A0A0A;
+
+  /* Real Superbike brand colors (from logo + storefront) */
+  --orange: #F5A623;
+  --orange-light: #FFD080;
+  --orange-hot: #FF8C00;
+  --red: #E03C31;
+  --red-glow: #FF4136;
+  --cream: #FFF8F0;
+  --black: #080808;
+  --black-soft: #0E0E0E;
+  --gray-card: #141414;
+  --gray-border: #222222;
 }
 
 * {
@@ -32,49 +40,127 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Safe area support for iPhone notch / Dynamic Island */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Custom scrollbar */
+/* Elegant thin scrollbar with orange accent */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 3px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: var(--black);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--gold);
+  background: linear-gradient(to bottom, var(--orange), var(--red));
   border-radius: 2px;
 }
 
-/* Gold gradient text utility */
-.text-gold-gradient {
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark, #8B6914) 100%);
+/* ═══════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Animated orange gradient text */
+.text-brand-gradient {
+  background: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 40%, var(--red) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Noise texture overlay */
+/* Animated glow text for hero */
+.text-glow {
+  text-shadow:
+    0 0 40px rgba(245, 166, 35, 0.15),
+    0 0 80px rgba(245, 166, 35, 0.05);
+}
+
+/* Noise texture overlay for cinematic grain */
 .noise-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
-/* Section divider line */
-.divider-gold {
-  width: 60px;
+/* Subtle gradient glow behind sections */
+.glow-orange {
+  background: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    rgba(245, 166, 35, 0.04) 0%,
+    transparent 70%
+  );
+}
+
+/* Section horizontal line with gradient */
+.line-orange {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--orange), transparent);
 }
 
-/* Grain video overlay */
-.video-grain {
+/* Card glass effect */
+.glass-card {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 166, 35, 0.08);
+}
+
+/* Vignette for video overlays */
+.vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 40%, rgba(10,10,10,0.8) 100%);
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(8,8,8,0.85) 100%);
   pointer-events: none;
+}
+
+/* Smooth cursor dot for hover states */
+.dot-cursor {
+  cursor: none;
+}
+
+/* Glowing border animation */
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(245, 166, 35, 0.15); }
+  50% { border-color: rgba(245, 166, 35, 0.4); }
+}
+
+.border-glow {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* Floating shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--cream) 0%,
+    var(--orange-light) 25%,
+    var(--cream) 50%,
+    var(--orange-light) 75%,
+    var(--cream) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Pulse glow for CTA buttons */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0); }
+  50% { box-shadow: 0 0 30px 4px rgba(245, 166, 35, 0.15); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
 }
