@@ -139,7 +139,7 @@ export default function ContactFooter() {
                   href="tel:+40766425329"
                   className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
                 >
-                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-12">
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-16">
                     Tel 1
                   </span>
                   <span>0766 425 329</span>
@@ -149,7 +149,7 @@ export default function ContactFooter() {
                   href="tel:+40761857003"
                   className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
                 >
-                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-12">
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-16">
                     Tel 2
                   </span>
                   <span>0761 857 003</span>
@@ -161,7 +161,7 @@ export default function ContactFooter() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
                 >
-                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-12">
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-20 shrink-0">
                     Facebook
                   </span>
                   <span>@superbikefocsani.ro</span>
@@ -173,7 +173,7 @@ export default function ContactFooter() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
                 >
-                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-12">
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-20 shrink-0">
                     Insta
                   </span>
                   <span>@superbikefocsani</span>

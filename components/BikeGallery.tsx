@@ -385,6 +385,14 @@ export default function BikeGallery() {
           Fiecare bicicletă de mai jos este o alegere, nu un compromis.
           Le puteți vedea și atinge la noi în magazin.
         </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-3 text-[#F5A623]/60 text-xs max-w-xl font-light leading-relaxed italic"
+        >
+          * Modelele prezentate au doar rol orientativ. În showroom-ul fizic vă așteaptă o varietate mult mai mare de biciclete direct de la toți producătorii parteneri.
+        </motion.p>
       </div>
 
       {/* Cross trust + Vrancea invite banner */}

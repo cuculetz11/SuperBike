@@ -5,11 +5,11 @@ import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 
 const BRANDS = [
-  { name: 'Specialized', logo: '/logos/specialized.png' },
-  { name: 'Cross', logo: '/logos/cross.png' },
-  { name: 'DHS', logo: '/logos/dhs.png' },
-  { name: 'Devron', logo: '/logos/devron.svg' },
-  { name: 'Haibike', logo: '/logos/haibike.svg' },
+  { name: 'Specialized', logo: '/logos/specialized.png', link: 'https://crossbike.ro/' },
+  { name: 'Cross', logo: '/logos/cross.png', link: 'https://crossbike.ro/' },
+  { name: 'DHS', logo: '/logos/dhs.png', link: 'https://afisport.ro/?utm_source=google&utm_medium=cpc&utm_campaign=&utm_id=21991970878&utm_term=&utm_content=&utm_feeditemid=&utm_device=c&utm_placement=&gad_source=1&gad_campaignid=21988080437&gclid=Cj0KCQjwlerQBhDMARIsAB16H-WuEH0Qg890wYTKySPe3Ib3L8a0O3XU8Nirl297s9a316lZNURxAXQaAuaNEALw_wcB' },
+  { name: 'Devron', logo: '/logos/devron_logo.webp', link: 'https://afisport.ro/?utm_source=google&utm_medium=cpc&utm_campaign=&utm_id=21991970878&utm_term=&utm_content=&utm_feeditemid=&utm_device=c&utm_placement=&gad_source=1&gad_campaignid=21988080437&gclid=Cj0KCQjwlerQBhDMARIsAB16H-WuEH0Qg890wYTKySPe3Ib3L8a0O3XU8Nirl297s9a316lZNURxAXQaAuaNEALw_wcB' },
+  { name: 'Haibike', logo: '/logos/haibike.png' },
   { name: 'Shimano', logo: '/logos/shimano.png' },
 ];
 
@@ -50,17 +50,29 @@ export default function BrandLogos() {
             {allBrands.map((brand, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 opacity-25 hover:opacity-70 grayscale hover:grayscale-0 transition-all duration-700 cursor-default"
+                className="flex-shrink-0 opacity-25 hover:opacity-70 grayscale hover:grayscale-0 transition-all duration-700"
               >
-                <div className="relative w-28 md:w-36 h-10 md:h-12">
-                  <Image
-                    src={brand.logo}
-                    alt={brand.name}
-                    fill
-                    className="object-contain"
-                    sizes="144px"
-                  />
-                </div>
+                {brand.link ? (
+                  <a href={brand.link} target="_blank" rel="noopener noreferrer" className="block relative w-28 md:w-36 h-10 md:h-12 cursor-pointer">
+                    <Image
+                      src={brand.logo}
+                      alt={brand.name}
+                      fill
+                      className="object-contain"
+                      sizes="144px"
+                    />
+                  </a>
+                ) : (
+                  <div className="relative w-28 md:w-36 h-10 md:h-12 cursor-default">
+                    <Image
+                      src={brand.logo}
+                      alt={brand.name}
+                      fill
+                      className="object-contain"
+                      sizes="144px"
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </motion.div>
