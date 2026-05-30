@@ -26,7 +26,7 @@ function StoryCard({ number, title, body, index }: StoryCardProps) {
       {/* Glow behind number on hover */}
       <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#F5A623]/0 group-hover:bg-[#F5A623]/5 rounded-full blur-3xl transition-all duration-700" />
 
-      <span className="font-display text-[#F5A623]/20 text-[5rem] leading-none select-none group-hover:text-[#F5A623]/40 transition-colors duration-700 relative z-10">
+      <span className="font-display text-[#F5A623]/20 text-[4rem] leading-none select-none group-hover:text-[#F5A623]/40 transition-colors duration-700 relative z-10">
         {number}
       </span>
       <div className="h-[2px] w-10 bg-gradient-to-r from-[#F5A623]/60 to-transparent transition-all duration-700 group-hover:w-20 group-hover:from-[#F5A623]" />
@@ -42,24 +42,24 @@ function StoryCard({ number, title, body, index }: StoryCardProps) {
 
 const storyItems = [
   {
-    number: '30',
+    number: '30+',
     title: 'Ani de\nExperiență',
-    body: 'Din 1995, suntem aceeași oameni, în același loc, cu aceeași pasiune. Vrancea ne cunoaște. Clienții ne știu pe nume.',
+    body: 'Facem asta de o viață. Cunoaștem bicicletele ca pe propriile buzunare și te ajutăm să alegi exact ce ți se potrivește.',
   },
   {
-    number: '20',
-    title: 'Ani în\nAceeași Locație',
-    body: 'Bd. Independenței, Focșani. Nu ne-am mutat, nu ne-am schimbat. Stabilitate înseamnă încredere.',
+    number: '%',
+    title: 'Prețuri\nSub Piață',
+    body: 'Avem clar cele mai bune oferte. Pentru că spațiul e al nostru, ne permitem să menținem prețurile corecte, mult sub media pieței.',
   },
   {
-    number: '∞',
-    title: 'Calitate\nFără Compromis',
-    body: 'Am renunțat la chinezăriile ieftine. Vindem Specialized, Cross, DHS, Devron, Haibike — branduri care nu te lasă baltă.',
+    number: '🔧',
+    title: 'Service &\nReparații',
+    body: 'Nu doar vindem, noi și reparăm. Ai pană sau ai nevoie de o revizie generală? Atelierul nostru rezolvă orice problemă.',
   },
   {
-    number: '0',
-    title: 'Zero\nCompromituri',
-    body: 'Spațiul e al nostru, nu avem angajați. Cele mai mici prețuri la modele de top. Simplu, cinstit, direct.',
+    number: '🔄',
+    title: 'Buy-Back\nPentru Copii',
+    body: 'Cei mici cresc repede! Adu-ne bicicleta care a rămas mică și o dăm la schimb (cu reducere) pe una pe mărimea lui.',
   },
 ];
 
@@ -83,7 +83,7 @@ export default function BrandStory() {
       {/* Background decorative text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
         <span className="font-display text-[22vw] text-white/[0.015] whitespace-nowrap">
-          EXPERIENȚĂ
+          FOCȘANI
         </span>
       </div>
 
@@ -99,7 +99,7 @@ export default function BrandStory() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-[#F5A623] text-[10px] md:text-xs tracking-[0.5em] uppercase font-light mb-5"
           >
-            Povestea noastră
+            Despre Noi
           </motion.p>
 
           <motion.h2
@@ -108,19 +108,18 @@ export default function BrandStory() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="font-display text-[clamp(3rem,8vw,8rem)] text-[#FFF8F0] leading-[0.9] tracking-wide"
           >
-            UN MAGAZIN
+            MAI MULT DECÂT
             <br />
-            <span className="text-brand-gradient">CU SUFLET</span>
+            <span className="text-brand-gradient">UN MAGAZIN</span>
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 25 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-8 font-body text-[#FFF8F0]/40 text-base md:text-lg leading-relaxed max-w-2xl font-light"
+            className="mt-8 font-body text-[#FFF8F0]/50 text-base md:text-lg leading-relaxed max-w-3xl font-light"
           >
-            Tatăl meu a construit ceva mai mult decât un magazin. A construit un loc unde oamenii
-            vin și doar pentru o vorbă bună și o glumă. Asta nu se cumpără — se câștigă în 30 de ani.
+            Suntem o echipă deschisă, plină de energie și cu o tonă de experiență. Aici râdem, glumim, ne simțim bine și te ajutăm să găsești bicicleta perfectă. Pasiunea pentru două roți se simte în fiecare recomandare pe care o facem, iar cel mai important: <strong>la noi prețurile sunt garantat sub prețul pieței!</strong>
           </motion.p>
         </div>
 
@@ -171,16 +170,17 @@ export default function BrandStory() {
             className="border-l-2 border-[#F5A623]/30 pl-8"
           >
             <p
-              className="text-2xl md:text-3xl text-[#FFF8F0]/80 italic leading-relaxed"
+              className="text-xl md:text-2xl text-[#FFF8F0]/80 italic leading-relaxed"
               style={{ fontFamily: 'var(--font-playfair)' }}
             >
-              „Toată Vrancea ne cunoaște. Și noi cunoaștem fiecare client pe care l-am ajutat
-              să găsească bicicleta perfectă."
+              „Avem o diversitate uriașă de biciclete: Cross, DHS, Devron, Specialized, Haibike și Kross. 
+              Găsești triciclete pentru adulți, trotinete și toate piesele de care ai nevoie. 
+              Orice cauți, e foarte probabil să avem pe stoc, la cel mai bun preț!”
             </p>
             <footer className="mt-6 flex items-center gap-4">
               <div className="h-px w-8 bg-[#F5A623]/40" />
               <span className="text-[#F5A623] text-[10px] tracking-[0.4em] uppercase font-light">
-                Superbike Focșani
+                Echipa Superbike
               </span>
             </footer>
           </motion.blockquote>
