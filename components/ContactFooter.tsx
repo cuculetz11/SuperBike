@@ -133,29 +133,53 @@ export default function ContactFooter() {
             />
 
             {/* ── Contact links ── */}
-            <motion.div variants={fadeUp} className="space-y-3">
-              <a
-                href="tel:+40xxxx"
-                className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
-              >
-                <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-12">
-                  Tel
-                </span>
-                <span>Sună-ne pentru detalii</span>
-                <span className="h-px w-0 group-hover:w-6 bg-[#F5A623] transition-all duration-500" />
-              </a>
-              <a
-                href="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
-              >
-                <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-12">
-                  Social
-                </span>
-                <span>Facebook · Instagram</span>
-                <span className="h-px w-0 group-hover:w-6 bg-[#F5A623] transition-all duration-500" />
-              </a>
+            <motion.div variants={fadeUp} className="space-y-4">
+              <div className="flex flex-col gap-3">
+                <a
+                  href="tel:+40766425329"
+                  className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
+                >
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-12">
+                    Tel 1
+                  </span>
+                  <span>0766 425 329</span>
+                  <span className="h-px w-0 group-hover:w-6 bg-[#F5A623] transition-all duration-500" />
+                </a>
+                <a
+                  href="tel:+40761857003"
+                  className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
+                >
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-12">
+                    Tel 2
+                  </span>
+                  <span>0761 857 003</span>
+                  <span className="h-px w-0 group-hover:w-6 bg-[#F5A623] transition-all duration-500" />
+                </a>
+                <a
+                  href="https://www.facebook.com/superbikefocsani.ro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
+                >
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-12">
+                    Facebook
+                  </span>
+                  <span>@superbikefocsani.ro</span>
+                  <span className="h-px w-0 group-hover:w-6 bg-[#F5A623] transition-all duration-500" />
+                </a>
+                <a
+                  href="https://www.instagram.com/superbikefocsani/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
+                >
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-12">
+                    Insta
+                  </span>
+                  <span>@superbikefocsani</span>
+                  <span className="h-px w-0 group-hover:w-6 bg-[#F5A623] transition-all duration-500" />
+                </a>
+              </div>
             </motion.div>
 
             {/* ── CTA Button with pulse glow ── */}

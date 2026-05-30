@@ -23,9 +23,7 @@ function StoryCard({ number, title, body, index }: StoryCardProps) {
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: index * 0.12 }}
       className="relative flex flex-col gap-5 p-8 glass-card rounded-sm group hover:border-[#F5A623]/20 transition-all duration-700"
     >
-      {/* Glow behind number on hover */}
       <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#F5A623]/0 group-hover:bg-[#F5A623]/5 rounded-full blur-3xl transition-all duration-700" />
-
       <span className="font-display text-[#F5A623]/20 text-[4rem] leading-none select-none group-hover:text-[#F5A623]/40 transition-colors duration-700 relative z-10">
         {number}
       </span>
@@ -49,17 +47,17 @@ const storyItems = [
   {
     number: '%',
     title: 'Prețuri\nSub Piață',
-    body: 'Avem clar cele mai bune oferte. Pentru că spațiul e al nostru, ne permitem să menținem prețurile corecte, mult sub media pieței.',
+    body: 'Spațiul e al nostru, nu avem angajați. Asta înseamnă că putem garanta prețuri reale, mult sub media pieței, la branduri de top.',
   },
   {
-    number: '🔧',
-    title: 'Service &\nReparații',
-    body: 'Nu doar vindem, noi și reparăm. Ai pană sau ai nevoie de o revizie generală? Atelierul nostru rezolvă orice problemă.',
+    number: '∞',
+    title: 'Gamă\nVariată',
+    body: 'Cross, DHS, Devron, Specialized, Haibike, Kross. Plus triciclete pentru adulți, trotinete și tot ce ai nevoie pentru două sau trei roți.',
   },
   {
-    number: '🔄',
-    title: 'Buy-Back\nPentru Copii',
-    body: 'Cei mici cresc repede! Adu-ne bicicleta care a rămas mică și o dăm la schimb (cu reducere) pe una pe mărimea lui.',
+    number: '★',
+    title: 'Echipă\nDeschisă',
+    body: 'Suntem oameni normali care iubesc bicicletele. Vii, râdem, glumim, îți dai seama ce îți trebuie și pleci mulțumit. Simplu.',
   },
 ];
 
@@ -119,7 +117,8 @@ export default function BrandStory() {
             transition={{ duration: 1, delay: 0.5 }}
             className="mt-8 font-body text-[#FFF8F0]/50 text-base md:text-lg leading-relaxed max-w-3xl font-light"
           >
-            Suntem o echipă deschisă, plină de energie și cu o tonă de experiență. Aici râdem, glumim, ne simțim bine și te ajutăm să găsești bicicleta perfectă. Pasiunea pentru două roți se simte în fiecare recomandare pe care o facem, iar cel mai important: <strong>la noi prețurile sunt garantat sub prețul pieței!</strong>
+            Suntem o echipă deschisă, cu experiență de peste 30 de ani și un singur obiectiv: să pleci mulțumit.
+            Vino la noi, spune-ne ce îți trebuie și îți găsim exact ce cauți — la prețul corect, garantat sub piață.
           </motion.p>
         </div>
 
@@ -154,9 +153,7 @@ export default function BrandStory() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </motion.div>
-            {/* Warm overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/60 to-transparent" />
-            {/* Label */}
             <div className="absolute bottom-4 left-4 bg-[#080808]/80 backdrop-blur-sm px-4 py-2 border border-[#F5A623]/10">
               <p className="text-[#F5A623] text-[9px] tracking-[0.4em] uppercase font-light">Bd. Independenței · Focșani</p>
             </div>
@@ -173,9 +170,8 @@ export default function BrandStory() {
               className="text-xl md:text-2xl text-[#FFF8F0]/80 italic leading-relaxed"
               style={{ fontFamily: 'var(--font-playfair)' }}
             >
-              „Avem o diversitate uriașă de biciclete: Cross, DHS, Devron, Specialized, Haibike și Kross. 
-              Găsești triciclete pentru adulți, trotinete și toate piesele de care ai nevoie. 
-              Orice cauți, e foarte probabil să avem pe stoc, la cel mai bun preț!”
+              „Toată Vrancea ne cunoaște. Și noi cunoaștem fiecare client pe care l-am ajutat
+              să găsească bicicleta perfectă. Vino și tu."
             </p>
             <footer className="mt-6 flex items-center gap-4">
               <div className="h-px w-8 bg-[#F5A623]/40" />

@@ -104,7 +104,7 @@ function BikeCard({ bike, index }: { bike: Bike; index: number }) {
   return (
     <motion.article
       ref={ref}
-      className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[auto] lg:min-h-[85vh] border-b border-[#1a1a1a] group overflow-hidden"
+      className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[auto] lg:min-h-[85vh] border-b border-[#1a1a1a] group overflow-hidden max-w-full"
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : {}}
       transition={{ duration: 0.6 }}
@@ -112,66 +112,64 @@ function BikeCard({ bike, index }: { bike: Bike; index: number }) {
       {/* ─── Image column ─── */}
       <div
         className={`relative overflow-hidden ${isEven ? 'lg:order-1' : 'lg:order-2'}`}
-        style={{ minHeight: 'min(55vh, 500px)' }}
+        style={{ minHeight: 'min(55vh, 500px)', background: '#f5f2ee' }}
       >
-        {/* Gradient background behind bike */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${bike.bgAccent}`} />
+        {/* Very subtle warm radial gradient for premium feel */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#efe8dc_0%,#f5f2ee_70%)]" />
 
-        {/* Subtle radial glow at center */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,166,35,0.04)_0%,transparent_65%)]" />
-
-        {/* Grid lines - very subtle */}
+        {/* Faint grid pattern */}
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)',
+              'linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
 
-        {/* Bike image with parallax */}
-        <motion.div className="absolute inset-0 flex items-center justify-center p-6 md:p-10 z-10" style={{ y: imgY }}>
+        {/* Bike image with mix-blend-mode to dissolve white bg */}
+        <motion.div className="absolute inset-0 flex items-center justify-center p-4 md:p-10 z-10" style={{ y: imgY }}>
           <div className="relative w-full h-full">
             <Image
               src={bike.image_url}
               alt={bike.name}
               fill
               className="object-contain object-center transition-transform duration-[2000ms] ease-out group-hover:scale-[1.05]"
+              style={{ mixBlendMode: 'multiply' }}
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         </motion.div>
 
-        {/* Shadow under bike */}
+        {/* Subtle bottom shadow */}
         <div
-          className="absolute bottom-0 left-[10%] right-[10%] h-[15%] z-[5] pointer-events-none"
+          className="absolute bottom-0 left-[10%] right-[10%] h-[10%] z-[5] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 70%)',
-            filter: 'blur(15px)',
+            background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.12) 0%, transparent 70%)',
+            filter: 'blur(10px)',
           }}
         />
 
-        {/* Gradient blending into text side */}
+        {/* Edge fade towards text side (light version) */}
         <div
           className={`absolute inset-0 z-[6] ${
             isEven
-              ? 'bg-gradient-to-r from-transparent via-transparent to-[#080808]/80'
-              : 'bg-gradient-to-l from-transparent via-transparent to-[#080808]/80'
+              ? 'bg-gradient-to-r from-transparent via-transparent to-[#f5f2ee]/90'
+              : 'bg-gradient-to-l from-transparent via-transparent to-[#f5f2ee]/90'
           }`}
         />
 
         {/* Brand watermark */}
         <div className="absolute bottom-5 left-5 z-10">
-          <span className="font-display text-[10px] tracking-[0.5em] text-white/15 uppercase">
+          <span className="font-display text-[10px] tracking-[0.5em] text-black/15 uppercase">
             {bike.brand}
           </span>
         </div>
 
         {/* Index number */}
         <div className="absolute top-5 right-5 z-10 flex items-center gap-2">
-          <div className="w-6 h-px bg-[#F5A623]/30" />
-          <span className="font-display text-4xl text-[#F5A623]/10 select-none">
+          <div className="w-6 h-px bg-[#F5A623]/50" />
+          <span className="font-display text-4xl text-[#F5A623]/20 select-none">
             {String(index + 1).padStart(2, '0')}
           </span>
         </div>
