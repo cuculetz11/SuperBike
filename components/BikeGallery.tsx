@@ -111,68 +111,59 @@ function BikeCard({ bike, index }: { bike: Bike; index: number }) {
     >
       {/* ─── Image column ─── */}
       <div
-        className={`relative overflow-hidden ${isEven ? 'lg:order-1' : 'lg:order-2'}`}
-        style={{ minHeight: 'min(55vh, 500px)', background: '#f5f2ee' }}
+        className={`relative flex items-center justify-center p-6 md:p-12 lg:p-20 overflow-hidden bg-[#080808] ${isEven ? 'lg:order-1' : 'lg:order-2'}`}
+        style={{ minHeight: 'min(55vh, 500px)' }}
       >
-        {/* Very subtle warm radial gradient for premium feel */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#efe8dc_0%,#f5f2ee_70%)]" />
+        {/* Ambient background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#F5A623]/[0.02] blur-[120px] rounded-full pointer-events-none" />
 
-        {/* Faint grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-
-        {/* Bike image with mix-blend-mode to dissolve white bg */}
-        <motion.div className="absolute inset-0 flex items-center justify-center p-4 md:p-10 z-10" style={{ y: imgY }}>
-          <div className="relative w-full h-full">
-            <Image
-              src={bike.image_url}
-              alt={bike.name}
-              fill
-              className="object-contain object-center transition-transform duration-[2000ms] ease-out group-hover:scale-[1.05]"
-              style={{ mixBlendMode: 'multiply' }}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-        </motion.div>
-
-        {/* Subtle bottom shadow */}
-        <div
-          className="absolute bottom-0 left-[10%] right-[10%] h-[10%] z-[5] pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.12) 0%, transparent 70%)',
-            filter: 'blur(10px)',
-          }}
-        />
-
-        {/* Edge fade towards text side (light version) */}
-        <div
-          className={`absolute inset-0 z-[6] ${
-            isEven
-              ? 'bg-gradient-to-r from-transparent via-transparent to-[#f5f2ee]/90'
-              : 'bg-gradient-to-l from-transparent via-transparent to-[#f5f2ee]/90'
-          }`}
-        />
-
-        {/* Brand watermark */}
-        <div className="absolute bottom-5 left-5 z-10">
-          <span className="font-display text-[10px] tracking-[0.5em] text-black/15 uppercase">
-            {bike.brand}
-          </span>
-        </div>
-
-        {/* Index number */}
-        <div className="absolute top-5 right-5 z-10 flex items-center gap-2">
-          <div className="w-6 h-px bg-[#F5A623]/50" />
-          <span className="font-display text-4xl text-[#F5A623]/20 select-none">
+        {/* Giant background number parallax */}
+        <motion.div 
+          style={{ y: useTransform(scrollYProgress, [0, 1], ['-15%', '15%']) }}
+          className="absolute right-0 bottom-0 md:right-10 md:bottom-10 z-0 pointer-events-none flex items-end justify-end"
+        >
+          <span className="font-display text-[12rem] md:text-[20rem] text-white/[0.015] leading-none select-none">
             {String(index + 1).padStart(2, '0')}
           </span>
-        </div>
+        </motion.div>
+
+        {/* Floating Light Canvas */}
+        <motion.div 
+          className="relative w-full max-w-lg lg:max-w-none aspect-square md:aspect-[4/3] lg:aspect-auto lg:h-[80%] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#ffffff]/5 z-10"
+          style={{ y: imgY }}
+        >
+          {/* Canvas Background */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ffffff_0%,#f0f0f0_100%)]" />
+          
+          {/* Grid pattern on the canvas */}
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: 'linear-gradient(rgba(0,0,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,1) 1px, transparent 1px)',
+              backgroundSize: '40px 40px',
+            }}
+          />
+
+          <Image
+            src={bike.image_url}
+            alt={bike.name}
+            fill
+            className="object-contain object-center transition-transform duration-[2000ms] ease-out group-hover:scale-[1.1] p-6 md:p-12"
+            style={{ mixBlendMode: 'multiply' }}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+
+          {/* Canvas Inner Shadow & Edge Highlight */}
+          <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.06)] pointer-events-none" />
+          <div className="absolute inset-0 border border-white/50 rounded-[2rem] pointer-events-none" />
+
+          {/* Brand watermark inside canvas */}
+          <div className="absolute bottom-5 left-6 md:bottom-8 md:left-8 z-10">
+            <span className="font-display text-[10px] md:text-[12px] tracking-[0.4em] text-black/15 uppercase font-bold">
+              {bike.brand}
+            </span>
+          </div>
+        </motion.div>
       </div>
 
       {/* ─── Text column ─── */}
