@@ -10,18 +10,35 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Superbike Focșani - Showroom Digital',
+  title: 'SuperBike Focșani - Biciclete Vrancea',
   description:
-    'Magazinul de biciclete premium din Focșani, Vrancea. 30 de ani de pasiune. Specialized, Cross, DHS, Devron, Haibike.',
-  keywords: ['biciclete', 'Focșani', 'Vrancea', 'Specialized', 'Cross', 'DHS', 'Haibike', 'Superbike'],
+    'Magazin și service de biciclete în Focșani, Vrancea. Peste 30 de ani de experiență. Biciclete noi și second-hand, electrice, piese și accesorii. Mărci: Specialized, Cross, DHS, Devron, Haibike.',
+  keywords: [
+    'biciclete Focșani',
+    'biciclete Vrancea',
+    'service biciclete Focșani',
+    'biciclete electrice Vrancea',
+    'biciclete second hand',
+    'magazin biciclete',
+    'Specialized Focșani',
+    'Cross',
+    'DHS',
+    'Devron',
+    'Haibike',
+    'SuperBike'
+  ],
+  icons: {
+    icon: '/logos/superbike-logo.png',
+    apple: '/logos/superbike-logo.png',
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'Superbike',
+    title: 'SuperBike',
   },
   openGraph: {
-    title: 'Superbike Focșani - Showroom Digital',
-    description: '30 de ani de pasiune pentru biciclete. Vindem calitate, nu compromisuri.',
+    title: 'SuperBike Focșani - Biciclete Vrancea',
+    description: 'Magazin și service de biciclete în Focșani. Peste 30 de ani de experiență. Vindem calitate, biciclete electrice și second-hand, piese și accesorii.',
     type: 'website',
     locale: 'ro_RO',
   },
