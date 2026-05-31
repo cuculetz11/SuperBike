@@ -73,6 +73,12 @@ const SERVICES = [
     body: 'Ți-a plăcut o bicicletă de la producătorii noștri? O putem aduce la un preț mai bun decât oriunde altundeva. Vorbește cu noi, găsim soluția perfectă.',
     accent: 'Prețuri imbatabile',
   },
+  {
+    icon: '♻️',
+    title: 'Biciclete\nSecond-Hand',
+    body: 'Avem și o selecție atent verificată de biciclete rulate, potrivite chiar pentru toate buzunarele. Revizie la zi, calitate garantată.',
+    accent: 'Pentru toate buzunarele',
+  },
 ];
 
 export default function Services() {
@@ -129,7 +135,7 @@ export default function Services() {
         </div>
 
         {/* Service cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {SERVICES.map((service, i) => (
             <ServiceCard
               key={i}

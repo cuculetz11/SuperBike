@@ -52,7 +52,7 @@ const storyItems = [
   {
     number: '∞',
     title: 'Gamă\nVariată',
-    body: 'Cross, DHS, Devron, Specialized, Haibike, Kross. Oferim și triciclete pentru adulți, trotinete, dar și o gamă largă de accesorii și piese.',
+    body: 'Cross, DHS, Devron, Specialized, Haibike, Kross. Oferim biciclete electrice la prețuri super, triciclete pentru adulți, trotinete și o gamă largă de accesorii și piese.',
   },
   {
     number: '★',
