@@ -56,7 +56,7 @@ const storyItems = [
   },
   {
     number: '★',
-    title: 'Echipă\nDeschisă',
+    title: 'Oameni\nPasionați',
     body: 'Suntem oameni normali care iubesc bicicletele. Vii, râdem, glumim, îți dai seama ce îți trebuie și pleci mulțumit. Simplu.',
   },
 ];
