@@ -185,7 +185,7 @@ export default function ContactFooter() {
             {/* ── CTA Button with pulse glow ── */}
             <motion.div variants={fadeUp} className="mt-2">
               <a
-                href="https://maps.google.com/?q=Bd+Independentei+Focsani"
+                href="https://share.google/gMI2h3iUWBShURAZp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-4 border border-[#F5A623] text-[#F5A623] px-8 sm:px-10 py-4 text-[10px] md:text-xs tracking-[0.4em] uppercase font-light hover:bg-[#F5A623] hover:text-[#080808] transition-all duration-500 pulse-glow group"
@@ -214,7 +214,7 @@ export default function ContactFooter() {
             className="relative h-72 sm:h-80 lg:h-full min-h-[280px] overflow-hidden border border-[#222222] rounded-sm group"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2766.3!2d27.177!3d45.697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b5bb9e!2sFoc%C8%99ani%2C+Bulevardul+Independen%C8%9Bei!5e0!3m2!1sro!2sro!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2766.3!2d27.185!3d45.6967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b4231802555555%3A0x87a5dc0d8c9035a5!2sSuperBike%20Foc%C8%99ani!5e0!3m2!1sro!2sro!4v1"
               width="100%"
               height="100%"
               style={{
