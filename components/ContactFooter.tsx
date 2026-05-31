@@ -214,7 +214,7 @@ export default function ContactFooter() {
             className="relative h-72 sm:h-80 lg:h-full min-h-[280px] overflow-hidden border border-[#222222] rounded-sm group"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2766.3!2d27.185!3d45.6967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b4231802555555%3A0x87a5dc0d8c9035a5!2sSuperBike%20Foc%C8%99ani!5e0!3m2!1sro!2sro!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.4406198491097!2d27.180150078051803!3d45.70219671752523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b4220aa8a814d7%3A0x231b83c98c45fea9!2sSuperBike%20Foc%C8%99ani%20%E2%80%93%20Magazin%20biciclete!5e0!3m2!1sro!2sro!4v1780236469542!5m2!1sro!2sro"
               width="100%"
               height="100%"
               style={{
