@@ -185,7 +185,7 @@ export default function ContactFooter() {
             {/* ── CTA Button with pulse glow ── */}
             <motion.div variants={fadeUp} className="mt-2">
               <a
-                href="https://share.google/gMI2h3iUWBShURAZp"
+                href="https://maps.app.goo.gl/qAjtdCkiz6LJzRGk6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-4 border border-[#F5A623] text-[#F5A623] px-8 sm:px-10 py-4 text-[10px] md:text-xs tracking-[0.4em] uppercase font-light hover:bg-[#F5A623] hover:text-[#080808] transition-all duration-500 pulse-glow group"
