@@ -81,18 +81,18 @@ export default function ContactFooter() {
       {/* ── Ambient glow ── */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-[#F5A623]/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 md:px-16 lg:px-28 pt-24 sm:pt-28 md:pt-36 pb-14 md:pb-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 md:px-16 lg:px-28 pt-20 sm:pt-28 md:pt-36 pb-12 md:pb-20">
         <motion.div
           variants={stagger}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16"
         >
           {/* ─── Left: Address + CTA ─── */}
           <div className="flex flex-col gap-6">
             <motion.p
               variants={fadeUp}
-              className="text-[#F5A623] text-[9px] md:text-[10px] tracking-[0.5em] uppercase font-light"
+              className="text-[#F5A623] text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.5em] uppercase font-light"
             >
               Unde ne găsești
             </motion.p>
@@ -101,7 +101,7 @@ export default function ContactFooter() {
             <motion.h2
               variants={fadeUp}
               className="font-display text-[#FFF8F0] leading-[0.9] tracking-wide break-words"
-              style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)' }}
+              style={{ fontSize: 'clamp(2.2rem, 8vw, 4rem)' }}
             >
               SUPER<span className="text-brand-gradient">BIKE</span>
               <br />
@@ -137,9 +137,9 @@ export default function ContactFooter() {
               <div className="flex flex-col gap-3">
                 <a
                   href="tel:+40766425329"
-                  className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
+                  className="flex items-center gap-3 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
                 >
-                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-16">
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase w-14 md:w-16 shrink-0">
                     Tel 1
                   </span>
                   <span>0766 425 329</span>
@@ -147,9 +147,9 @@ export default function ContactFooter() {
                 </a>
                 <a
                   href="tel:+40761857003"
-                  className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
+                  className="flex items-center gap-3 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
                 >
-                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-16">
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase w-14 md:w-16 shrink-0">
                     Tel 2
                   </span>
                   <span>0761 857 003</span>
@@ -159,25 +159,25 @@ export default function ContactFooter() {
                   href="https://www.facebook.com/superbikefocsani.ro"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
+                  className="flex items-center gap-3 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
                 >
-                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-20 shrink-0">
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase w-20 shrink-0">
                     Facebook
                   </span>
-                  <span>@superbikefocsani.ro</span>
-                  <span className="h-px w-0 group-hover:w-6 bg-[#F5A623] transition-all duration-500" />
+                  <span className="truncate">@superbikefocsani.ro</span>
+                  <span className="h-px w-0 group-hover:w-6 bg-[#F5A623] transition-all duration-500 shrink-0" />
                 </a>
                 <a
                   href="https://www.instagram.com/superbikefocsani/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
+                  className="flex items-center gap-3 text-[#FFF8F0]/40 hover:text-[#F5A623] transition-colors duration-400 text-sm font-light group"
                 >
-                  <span className="text-[#F5A623] text-[10px] tracking-[0.3em] uppercase w-20 shrink-0">
+                  <span className="text-[#F5A623] text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase w-20 shrink-0">
                     Insta
                   </span>
                   <span>@superbikefocsani</span>
-                  <span className="h-px w-0 group-hover:w-6 bg-[#F5A623] transition-all duration-500" />
+                  <span className="h-px w-0 group-hover:w-6 bg-[#F5A623] transition-all duration-500 shrink-0" />
                 </a>
               </div>
             </motion.div>
@@ -264,7 +264,7 @@ export default function ContactFooter() {
           variants={fadeUp}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="mt-14 pt-6 border-t border-[#222222] flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="mt-10 md:mt-14 pt-6 border-t border-[#222222] flex flex-col sm:flex-row items-center justify-between gap-3"
         >
           <div className="flex items-center gap-3">
             <Image
@@ -274,11 +274,11 @@ export default function ContactFooter() {
               height={24}
               className="w-5 h-5 object-contain opacity-40"
             />
-            <p className="text-[#FFF8F0]/20 text-xs font-light tracking-wider">
+            <p className="text-[#FFF8F0]/20 text-xs font-light tracking-wide">
               © {new Date().getFullYear()} Superbike Focșani
             </p>
           </div>
-          <p className="text-[#FFF8F0]/15 text-[10px] font-light tracking-wider">
+          <p className="text-[#FFF8F0]/15 text-[10px] font-light tracking-[0.15em] md:tracking-wider text-center">
             Specialized · Cross · DHS · Devron · Haibike
           </p>
         </motion.div>

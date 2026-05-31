@@ -158,7 +158,7 @@ export default function Hero() {
           variants={fadeUp(0.5)}
           initial="hidden"
           animate="visible"
-          className="text-[#F5A623] text-[10px] md:text-xs tracking-[0.6em] uppercase font-light mb-5"
+          className="text-[#F5A623] text-[10px] md:text-xs tracking-[0.35em] md:tracking-[0.6em] uppercase font-light mb-5"
         >
           Focșani · Vrancea · Din 1995
         </motion.p>
@@ -175,7 +175,7 @@ export default function Hero() {
             <motion.span
               key={i}
               variants={letterVariants}
-              className="font-display text-[clamp(2.8rem,10.5vw,13rem)] leading-[0.85] tracking-[0.01em] inline-block text-glow flex-shrink-0"
+              className="font-display text-[clamp(2.2rem,10vw,13rem)] leading-[0.85] tracking-[0.01em] inline-block text-glow flex-shrink-0"
               style={{
                 transformOrigin: 'bottom center',
                 color: i < 5 ? '#FFF8F0' : undefined, // SUPER = white
@@ -208,7 +208,7 @@ export default function Hero() {
           variants={fadeUp(1.5)}
           initial="hidden"
           animate="visible"
-          className="text-[#FFF8F0]/50 text-xs md:text-sm tracking-[0.3em] uppercase font-light text-center max-w-lg"
+          className="text-[#FFF8F0]/50 text-xs md:text-sm tracking-[0.15em] md:tracking-[0.3em] uppercase font-light text-center max-w-lg px-4"
         >
           30 de ani de pasiune · Calitate fără compromis
         </motion.p>
@@ -218,7 +218,7 @@ export default function Hero() {
           variants={fadeUp(1.8)}
           initial="hidden"
           animate="visible"
-          className="mt-4 text-[#FFF8F0]/30 text-sm md:text-base font-light italic text-center max-w-md"
+          className="mt-4 text-[#FFF8F0]/30 text-sm md:text-base font-light italic text-center max-w-md px-4"
           style={{ fontFamily: 'var(--font-playfair)' }}
         >
           Magazin de biciclete premium

@@ -168,7 +168,7 @@ function BikeCard({ bike, index }: { bike: Bike; index: number }) {
 
       {/* ─── Text column ─── */}
       <motion.div
-        className={`flex flex-col justify-center px-6 md:px-14 lg:px-20 py-10 md:py-16 lg:py-20 bg-[#080808] relative ${
+        className={`flex flex-col justify-center px-5 sm:px-8 md:px-14 lg:px-20 py-8 md:py-16 lg:py-20 bg-[#080808] relative ${
           isEven ? 'lg:order-2' : 'lg:order-1'
         }`}
         style={{ y: textY }}
@@ -181,7 +181,7 @@ function BikeCard({ bike, index }: { bike: Bike; index: number }) {
           initial={{ opacity: 0, x: isEven ? -20 : 20 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-[#F5A623] text-[10px] tracking-[0.5em] uppercase font-light mb-4 relative z-10"
+          className="text-[#F5A623] text-[10px] tracking-[0.3em] md:tracking-[0.5em] uppercase font-light mb-4 relative z-10"
         >
           {bike.brand}
         </motion.p>
@@ -191,7 +191,7 @@ function BikeCard({ bike, index }: { bike: Bike; index: number }) {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="font-display text-[clamp(2rem,5vw,4rem)] text-[#FFF8F0] leading-[0.95] tracking-wide mb-4 relative z-10"
+          className="font-display text-[clamp(1.8rem,5vw,4rem)] text-[#FFF8F0] leading-[0.95] tracking-wide mb-4 relative z-10"
         >
           {bike.name}
         </motion.h3>
@@ -270,14 +270,14 @@ function CrossTrustBanner() {
       {/* Background accent */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,166,35,0.03)_0%,transparent_70%)]" />
 
-      <div className="relative z-10 px-6 md:px-16 lg:px-28 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+      <div className="relative z-10 px-5 sm:px-8 md:px-16 lg:px-28 py-10 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
         {/* Left: Cross brand trust */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-[#F5A623] text-[10px] tracking-[0.5em] uppercase font-light mb-3">
+          <p className="text-[#F5A623] text-[10px] tracking-[0.3em] md:tracking-[0.5em] uppercase font-light mb-3">
             Furnizorul nostru de încredere
           </p>
           <h3 className="font-display text-[clamp(1.8rem,4vw,3rem)] text-[#FFF8F0] leading-[0.95] tracking-wide mb-4">
@@ -348,12 +348,12 @@ export default function BikeGallery() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#F5A623]/[0.015] rounded-full blur-[120px] pointer-events-none" />
 
       {/* Section header */}
-      <div ref={titleRef} className="px-6 md:px-16 lg:px-28 pt-28 md:pt-36 pb-16 md:pb-24 relative z-10">
+      <div ref={titleRef} className="px-5 sm:px-8 md:px-16 lg:px-28 pt-20 md:pt-36 pb-12 md:pb-24 relative z-10">
         <motion.p
           initial={{ opacity: 0, x: -20 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-[#F5A623] text-[10px] md:text-xs tracking-[0.5em] uppercase font-light mb-4"
+          className="text-[#F5A623] text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase font-light mb-4"
         >
           Colecția noastră
         </motion.p>
@@ -361,7 +361,7 @@ export default function BikeGallery() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          className="font-display text-[clamp(3rem,8vw,8rem)] text-[#FFF8F0] leading-[0.85] tracking-wide"
+          className="font-display text-[clamp(2.5rem,8vw,8rem)] text-[#FFF8F0] leading-[0.85] tracking-wide"
         >
           THE
           <br />

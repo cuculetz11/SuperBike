@@ -76,7 +76,7 @@ export default function BrandStory() {
   return (
     <section
       id="brand-story"
-      className="relative py-32 md:py-44 px-6 md:px-16 lg:px-28 bg-[#080808] overflow-hidden"
+      className="relative py-24 md:py-44 px-5 sm:px-8 md:px-16 lg:px-28 bg-[#080808] overflow-hidden"
     >
       {/* Background decorative text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
@@ -95,7 +95,7 @@ export default function BrandStory() {
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-[#F5A623] text-[10px] md:text-xs tracking-[0.5em] uppercase font-light mb-5"
+            className="text-[#F5A623] text-[10px] md:text-xs tracking-[0.35em] md:tracking-[0.5em] uppercase font-light mb-5"
           >
             Despre Noi
           </motion.p>
@@ -104,7 +104,7 @@ export default function BrandStory() {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="font-display text-[clamp(3rem,8vw,8rem)] text-[#FFF8F0] leading-[0.9] tracking-wide"
+            className="font-display text-[clamp(2.5rem,8vw,8rem)] text-[#FFF8F0] leading-[0.9] tracking-wide"
           >
             MAI MULT DECÂT
             <br />
@@ -115,7 +115,7 @@ export default function BrandStory() {
             initial={{ opacity: 0, y: 25 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-8 font-body text-[#FFF8F0]/50 text-base md:text-lg leading-relaxed max-w-3xl font-light"
+            className="mt-8 font-body text-[#FFF8F0]/50 text-sm md:text-lg leading-relaxed max-w-3xl font-light"
           >
             Suntem o echipă deschisă, cu experiență de peste 30 de ani și un singur obiectiv: să pleci mulțumit.
             Vino la noi, spune-ne ce îți trebuie și îți găsim exact ce cauți, la prețul corect, garantat sub piață.
@@ -123,7 +123,7 @@ export default function BrandStory() {
         </div>
 
         {/* Story cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-4">
           {storyItems.map((item, i) => (
             <StoryCard
               key={i}
@@ -136,7 +136,7 @@ export default function BrandStory() {
         </div>
 
         {/* ─── STORE IMAGE + QUOTE ─── */}
-        <div ref={storeRef} className="mt-28 md:mt-36 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div ref={storeRef} className="mt-20 md:mt-36 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Store photo with parallax */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -164,10 +164,10 @@ export default function BrandStory() {
             initial={{ opacity: 0, x: 40 }}
             animate={storeInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            className="border-l-2 border-[#F5A623]/30 pl-8"
+            className="border-l-2 border-[#F5A623]/30 pl-5 md:pl-8"
           >
             <p
-              className="text-xl md:text-2xl text-[#FFF8F0]/80 italic leading-relaxed"
+              className="text-lg md:text-2xl text-[#FFF8F0]/80 italic leading-relaxed"
               style={{ fontFamily: 'var(--font-playfair)' }}
             >
               „Toată Vrancea ne cunoaște. Și noi cunoaștem fiecare client pe care l-am ajutat

@@ -88,7 +88,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-28 md:py-40 px-6 md:px-16 lg:px-28 bg-[#080808] overflow-hidden"
+      className="relative py-20 md:py-40 px-5 sm:px-8 md:px-16 lg:px-28 bg-[#080808] overflow-hidden"
     >
       {/* Giant ghost text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
@@ -107,7 +107,7 @@ export default function Services() {
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-[#F5A623] text-[10px] md:text-xs tracking-[0.5em] uppercase font-light mb-5"
+            className="text-[#F5A623] text-[10px] md:text-xs tracking-[0.35em] md:tracking-[0.5em] uppercase font-light mb-5"
           >
             Mai mult decât un magazin
           </motion.p>
@@ -116,7 +116,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-display text-[clamp(2.5rem,7vw,7rem)] text-[#FFF8F0] leading-[0.9] tracking-wide"
+            className="font-display text-[clamp(2rem,7vw,7rem)] text-[#FFF8F0] leading-[0.9] tracking-wide"
           >
             DE CE
             <br />
@@ -127,7 +127,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-6 text-[#FFF8F0]/35 text-sm md:text-base max-w-xl font-light leading-relaxed"
+            className="mt-6 text-[#FFF8F0]/35 text-sm max-w-xl font-light leading-relaxed"
           >
             Nu vindem doar biciclete. Oferim o experiență completă, de la sfat sincer,
             la service de încredere, la programe unice pe care nu le găsești în altă parte.
@@ -135,7 +135,7 @@ export default function Services() {
         </div>
 
         {/* Service cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {SERVICES.map((service, i) => (
             <ServiceCard
               key={i}
