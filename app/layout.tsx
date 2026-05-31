@@ -10,7 +10,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Superbike Focșani — Showroom Digital',
+  title: 'Superbike Focșani - Showroom Digital',
   description:
     'Magazinul de biciclete premium din Focșani, Vrancea. 30 de ani de pasiune. Specialized, Cross, DHS, Devron, Haibike.',
   keywords: ['biciclete', 'Focșani', 'Vrancea', 'Specialized', 'Cross', 'DHS', 'Haibike', 'Superbike'],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: 'Superbike',
   },
   openGraph: {
-    title: 'Superbike Focșani — Showroom Digital',
+    title: 'Superbike Focșani - Showroom Digital',
     description: '30 de ani de pasiune pentru biciclete. Vindem calitate, nu compromisuri.',
     type: 'website',
     locale: 'ro_RO',

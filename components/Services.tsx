@@ -58,7 +58,7 @@ const SERVICES = [
   {
     icon: '🔧',
     title: 'Service\nProfesional',
-    body: 'Reparăm și întreținem bicicletele clienților noștri. Avem experiența și piesele originale. Prioritate pentru cine a cumpărat de la noi — dar ușa e deschisă pentru toți.',
+    body: 'Reparăm și întreținem bicicletele clienților noștri. Avem experiența și piesele originale. Prioritate pentru cine a cumpărat de la noi, dar ușa e deschisă pentru toți.',
     accent: 'Prioritate clienți Superbike',
   },
   {
@@ -70,7 +70,7 @@ const SERVICES = [
   {
     icon: '💰',
     title: 'Preț Special\nLa Comandă',
-    body: 'Ți-a plăcut o bicicletă de la producătorii noștri? O putem aduce la un preț mai bun decât oriunde altundeva. Vorbește cu noi — găsim soluția perfectă.',
+    body: 'Ți-a plăcut o bicicletă de la producătorii noștri? O putem aduce la un preț mai bun decât oriunde altundeva. Vorbește cu noi, găsim soluția perfectă.',
     accent: 'Prețuri imbatabile',
   },
 ];
@@ -123,7 +123,7 @@ export default function Services() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-6 text-[#FFF8F0]/35 text-sm md:text-base max-w-xl font-light leading-relaxed"
           >
-            Nu vindem doar biciclete. Oferim o experiență completă — de la sfat sincer,
+            Nu vindem doar biciclete. Oferim o experiență completă, de la sfat sincer,
             la service de încredere, la programe unice pe care nu le găsești în altă parte.
           </motion.p>
         </div>

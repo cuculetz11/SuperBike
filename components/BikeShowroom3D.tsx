@@ -42,7 +42,7 @@ const PERSPECTIVES: Perspective[] = [
     title: 'Prezență Dominantă',
     subtitle: 'Forță și eleganță',
     description:
-      'Din acest unghi, vezi puterea reală. Furca FOX Performance, discuri hidraulice SRAM și anvelope Butcher GRID — totul spune agresivitate controlată.',
+      'Din acest unghi, vezi puterea reală. Furca FOX Performance, discuri hidraulice SRAM și anvelope Butcher GRID, totul spune agresivitate controlată.',
     specs: [
       { label: 'Furcă', value: 'FOX 36' },
       { label: 'Frâne', value: 'SRAM' },
@@ -58,7 +58,7 @@ const PERSPECTIVES: Perspective[] = [
     title: 'Mecanismul din Spate',
     subtitle: 'Inginerie la superlativ',
     description:
-      'Amortizorul spate FOX Float, transmisia SRAM NX Eagle 12v și pivotul HORST Link — combinația perfectă pentru tracțiune și control total.',
+      'Amortizorul spate FOX Float, transmisia SRAM NX Eagle 12v și pivotul HORST Link, combinația perfectă pentru tracțiune și control total.',
     specs: [
       { label: 'Amortizor', value: 'FOX Float' },
       { label: 'Transmisie', value: 'NX Eagle' },
@@ -389,7 +389,7 @@ export default function BikeShowroom3D() {
             >
               <Image
                 src={perspective.image}
-                alt={`Specialized Status 160 — ${perspective.label}`}
+                alt={`Specialized Status 160 - ${perspective.label}`}
                 fill
                 className="object-contain object-center drop-shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
                 sizes="(max-width: 1024px) 90vw, 55vw"
@@ -398,7 +398,7 @@ export default function BikeShowroom3D() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Angle indicator — floating badge */}
+          {/* Angle indicator - floating badge */}
           <AnimatePresence mode="wait">
             <motion.div
               key={`angle-${activeIndex}`}

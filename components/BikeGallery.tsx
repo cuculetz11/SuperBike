@@ -23,7 +23,7 @@ const BIKES: Bike[] = [
     brand: 'Cross',
     tagline: '"Vedeta noastră absolută! Trece peste bolovani de zici că mergi pe asfalt."',
     description:
-      'Dacă vrei distracție și adrenalină pe coborâri — asta e bicicleta ta.',
+      'Dacă vrei distracție și adrenalină pe coborâri, asta e bicicleta ta.',
     specs: [
       'Suspensii: RockShox Psylo & Deluxe (160mm)',
       'Transmisie: Shimano Deore XT (1×12)',
@@ -55,7 +55,7 @@ const BIKES: Bike[] = [
     id: 3,
     name: 'Cross Causa SL1',
     brand: 'Cross',
-    tagline: '"Concepută special pentru ele — comodă, elegantă și gata de aventură."',
+    tagline: '"Concepută special pentru ele, comodă, elegantă și gata de aventură."',
     description:
       'Geometrie feminină, manevrabilitate perfectă, stil inconfundabil.',
     specs: [
@@ -74,7 +74,7 @@ const BIKES: Bike[] = [
     brand: 'Cross',
     tagline: '"Pentru puștii cu temperament ridicat. Sarituri, manevre și distracție maximă."',
     description:
-      'Construită pentru bike park și dirt — rezistentă, agilă, fără compromisuri.',
+      'Construită pentru bike park și dirt, rezistentă, agilă, fără compromisuri.',
     specs: [
       'Furcă: Zoom 595S AMS (100mm)',
       'Transmisie: Shimano Altus/Alivio (3×9)',
@@ -213,7 +213,7 @@ function BikeCard({ bike, index }: { bike: Bike; index: number }) {
           className="h-[2px] w-14 bg-gradient-to-r from-[#F5A623] to-transparent origin-left mb-6"
         />
 
-        {/* Tagline — italic quote */}
+        {/* Tagline - italic quote */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -296,7 +296,7 @@ function CrossTrustBanner() {
           <div className="h-[2px] w-10 bg-gradient-to-r from-[#F5A623] to-transparent mb-4" />
           <p className="text-[#FFF8F0]/35 text-sm leading-relaxed font-light max-w-sm">
             Cross este furnizorul de la care lucrăm de ani de zile. Fiabilitate dovedită, 
-            cel mai bun raport calitate-preț de pe piață și un service impecabil — 
+            cel mai bun raport calitate-preț de pe piață și un service impecabil, 
             de aceea le recomandăm cu toată încrederea.
           </p>
         </motion.div>

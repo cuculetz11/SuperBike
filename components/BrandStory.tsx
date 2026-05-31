@@ -52,7 +52,7 @@ const storyItems = [
   {
     number: '∞',
     title: 'Gamă\nVariată',
-    body: 'Cross, DHS, Devron, Specialized, Haibike, Kross. Plus triciclete pentru adulți, trotinete și tot ce ai nevoie pentru două sau trei roți.',
+    body: 'Cross, DHS, Devron, Specialized, Haibike, Kross. Oferim și triciclete pentru adulți, trotinete, dar și o gamă largă de accesorii și piese.',
   },
   {
     number: '★',
@@ -118,7 +118,7 @@ export default function BrandStory() {
             className="mt-8 font-body text-[#FFF8F0]/50 text-base md:text-lg leading-relaxed max-w-3xl font-light"
           >
             Suntem o echipă deschisă, cu experiență de peste 30 de ani și un singur obiectiv: să pleci mulțumit.
-            Vino la noi, spune-ne ce îți trebuie și îți găsim exact ce cauți — la prețul corect, garantat sub piață.
+            Vino la noi, spune-ne ce îți trebuie și îți găsim exact ce cauți, la prețul corect, garantat sub piață.
           </motion.p>
         </div>
 

@@ -111,7 +111,7 @@ export default function Hero() {
 
       {/* ═══ FLOATING PARTICLES / GLOW ═══ */}
       <div className="absolute inset-0 pointer-events-none z-[5]">
-        {/* Ambient orange orb — top right */}
+        {/* Ambient orange orb - top right */}
         <motion.div
           className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full"
           style={{
@@ -120,7 +120,7 @@ export default function Hero() {
           animate={{ y: [0, 30, 0], x: [0, -15, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
-        {/* Ambient red orb — bottom left */}
+        {/* Ambient red orb - bottom left */}
         <motion.div
           className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full"
           style={{
@@ -213,7 +213,7 @@ export default function Hero() {
           30 de ani de pasiune · Calitate fără compromis
         </motion.p>
 
-        {/* Subtitle — italic poetic line */}
+        {/* Subtitle - italic poetic line */}
         <motion.p
           variants={fadeUp(1.8)}
           initial="hidden"
